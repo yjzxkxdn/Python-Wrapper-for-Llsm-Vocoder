@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "cffi>=1.15"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyllsm"
+version = "0.1.0"
+description = "Python bindings for libllsm (import name: pyllsm)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+  { name = "llsm wrapper contributors" }
+]
+dependencies = [
+  "numpy>=1.24",
+  "cffi>=1.15",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=7.0",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
